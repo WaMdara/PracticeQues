@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Day and Time</title>
+</head>
+<body>
+    <script>
+        // Get the current date
+        const currentDate = new Date();
+
+        // Define an array of weekday names
+        const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        // Get the current day of the week (0-6, where 0 is Sunday)
+        const currentDayIndex = currentDate.getDay();
+
+        // Get the current time in 24-hour format (HH:MM:SS)
+        const currentTime = currentDate.toLocaleTimeString('en-US', { hour12: false });
+
+        // Display the current day and time
+        const output = `Today is: ${weekdays[currentDayIndex]}. Current time is: ${currentTime}`;
+        console.log(output);
+
+        // You can also display it on the web page instead of the console
+        // const outputElement = document.createElement("p");
+        // outputElement.textContent = output;
+        // document.body.appendChild(outputElement);
+    </script>
+</body>
+</html>

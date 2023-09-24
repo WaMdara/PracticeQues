@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace H2 Text</title>
+</head>
+<body>
+    <h2 id="helloHeader">Hello</h2>
+    <input type="text" id="textInput" placeholder="Enter a word">
+    <button onclick="replaceText()">Replace</button>
+
+    <script>
+        function replaceText() {
+            const inputText = document.getElementById('textInput').value;
+            const helloHeader = document.getElementById('helloHeader');
+
+            if (inputText.trim() !== '') {
+                helloHeader.textContent = inputText;
+            } else {
+                alert('Please enter a word.');
+            }
+        }
+    </script>
+</body>
+</html>

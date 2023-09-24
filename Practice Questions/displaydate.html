@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Current Day and Time</title>
+</head>
+<body>
+<div id="current-day-time"></div>
+
+<script>
+// Create a new Date object
+const today = new Date();
+
+// Get the day of the week
+const day = today.getDay();
+
+// Create an array of days
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+// Get the current day
+const currentDay = days[day];
+
+// Display the current day
+document.getElementById("current-day-time").innerHTML = `Today is: ${currentDay}`;
+</script>
+</body>
+</html>

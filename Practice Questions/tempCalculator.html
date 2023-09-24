@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+   
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+
+    <p>Enter a temperature in Celsius or Fahrenheit:</p>
+    <input type="text" id="temperature" placeholder="Enter temperature">
+    <select id="unit">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+    </select>
+    <button onclick="convertTemperature()">Convert</button>
+
+    <p id="result"></p>
+
+    <script>
+        function convertTemperature() {
+            // Get the temperature value and unit selection
+            const temperatureInput = document.getElementById('temperature').value;
+            const unit = document.getElementById('unit').value;
+
+            // Convert the temperature
+            let result = '';
+            if (unit === 'celsius') {
+                // Convert from Celsius to Fahrenheit
+                const fahrenheit = (temperatureInput * 9 / 5) + 32;
+                result = `${temperatureInput}°C is ${fahrenheit}°F`;
+            } else if (unit === 'fahrenheit') {
+                // Convert from Fahrenheit to Celsius
+                const celsius = (temperatureInput - 32) * 5 / 9;
+                result = `${temperatureInput}°F is ${celsius}°C`;
+            }
+
+            // Display the result
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>

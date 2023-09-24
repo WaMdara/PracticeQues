@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicate Characters</title>
+</head>
+<body>
+    <h1>Remove Duplicate Characters from a String</h1>
+
+    <p>Enter a string:</p>
+    <input type="text" id="inputString" placeholder="e.g., programming">
+    <button onclick="removeDuplicates()">Remove Duplicates</button>
+
+    <p id="result"></p>
+
+    <script>
+        function removeDuplicates() {
+            const inputString = document.getElementById('inputString').value;
+            const charCount = {};
+
+            // Create a character frequency count
+            for (let char of inputString) {
+                charCount[char] = (charCount[char] || 0) + 1;
+            }
+
+            // Filter out characters with count greater than 1
+            const filteredString = inputString.split('').filter(char => charCount[char] === 1).join('');
+
+            document.getElementById('result').textContent = `String without duplicates: ${filteredString}`;
+        }
+    </script>
+</body>
+</html>

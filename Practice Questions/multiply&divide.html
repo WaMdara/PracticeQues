@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+   
+    <title>Multiplication and Division Calculator</title>
+</head>
+<body>
+    <h1>Multiplication and Division Calculator</h1>
+    
+    <p>Enter Number 1 <input type="text" id="num1" placeholder="Enter first number"></p>
+    <p>Enter Number 2 <input type="text" id="num2" placeholder="Enter second number"> </p>
+    <button onclick="multiplyNumbers()">Multiply</button>
+    <button onclick="divideNumbers()">Divide</button>
+
+    <p id="result"></p>
+
+    <script>
+        function multiplyNumbers() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+            if (!isNaN(num1) && !isNaN(num2)) {
+                const result = num1 * num2;
+                document.getElementById('result').textContent = `Result: ${result}`;
+            } else {
+                document.getElementById('result').textContent = 'Please enter valid numbers.';
+            }
+        }
+
+        function divideNumbers() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+            if (!isNaN(num1) && !isNaN(num2) && num2 !== 0) {
+                const result = num1 / num2;
+                document.getElementById('result').textContent = `Result: ${result}`;
+            } else {
+                document.getElementById('result').textContent = 'Please enter valid numbers (and make sure the second number is not zero).';
+            }
+        }
+    </script>
+</body>
+</html>
